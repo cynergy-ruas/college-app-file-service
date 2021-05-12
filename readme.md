@@ -1,4 +1,5 @@
-# Submission Service
+# File Service for College App
+
 [![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
 
 ## Setup
