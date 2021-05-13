@@ -19,20 +19,18 @@ const File_Schema = new Schema({
     type: String,
     required: true,
   },
-
   Section: {
     type: String,
     required: true,
   },
   Year: {
-    type: String,
+    type: Number,
     required: true,
   },
   Department: {
     type: String,
     required: true,
   },
-
   Uploaded_By: {
     type: String,
     required: true,
@@ -41,7 +39,10 @@ const File_Schema = new Schema({
     type: String,
     required: true,
   },
-
+  Semester: {
+    type: Number,
+    required: true,
+  },
   TimeStamp: {
     type: Date,
     default: new Date(),
