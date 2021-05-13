@@ -1,6 +1,5 @@
 import express from 'express';
-import Submisson_Router from './routes/submission_route';
-import Faculty_Router from './routes/faculty_route';
+import File_Router from './routes/files_route';
 import mongoose from 'mongoose';
 import { MONGODB_URI } from './utils/secret';
 import logger from './utils/logger';
@@ -26,8 +25,6 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.json());
 
-app.use('/submissions', Submisson_Router);
-
-app.use('/faculty', Faculty_Router);
+app.use('/files', File_Router);
 
 export default app;

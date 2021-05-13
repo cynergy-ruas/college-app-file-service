@@ -40,7 +40,7 @@ export async function getbycoursename(req: any, res: any) {
   }
 }
 // This Request is for all the IC Memebers and Admin if he wants to filter out
-export async function getbycourse(req: any, res: any) {
+export async function getbycoursecode(req: any, res: any) {
   try {
     await File_Schema.find({
       Course_Code: req.query.Course_Code,

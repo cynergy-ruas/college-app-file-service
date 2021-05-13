@@ -1,11 +1,8 @@
 import AWS from 'aws-sdk';
-import { notifyIC } from './notify_service_ICs';
-import { notifyStudent_Stage_1 } from './notify_service_student';
 import File_Schema from '../model/fileschema';
 require('dotenv/config');
 
 // This Contains all the code for the S3 Service Bucket
-// TODO Write the Comments later. (After the Exams)
 export async function s3_service_function(req: any, res: any) {
   var S3_Links_Array: String[] = [];
 
@@ -47,11 +44,6 @@ export async function s3_service_function(req: any, res: any) {
       });
       try {
         MongoSubmission.save().then(async () => {
-          // console.log('Sucessfully Uploaded');
-          // console.log('Mails Sent to following people');
-          // // Small thing
-          // await notifyStudent_Stage_1(MongoSubmission);
-          // await notifyIC(MongoSubmission);
           res.status(200).send('Successfully Uploaded');
         });
       } catch (err) {
