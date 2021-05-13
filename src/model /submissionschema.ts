@@ -2,36 +2,8 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
-const Submission_Schema = new Schema({
-  Student_Name: {
-    type: String,
-    required: true,
-  },
-  Student_Registration_Number: {
-    type: String,
-    required: true,
-  },
-  Batch: {
-    type: String,
-    required: true,
-  },
-  Course_Code: {
-    type: String,
-    required: true,
-  },
-  Department: {
-    type: String,
-    required: true,
-  },
-  Event_Name: {
-    type: String,
-    required: true,
-  },
-  Project_Name: {
-    type: String,
-    required: true,
-  },
-  Team_Name: {
+const File_Schema = new Schema({
+  File_Name: {
     type: String,
     required: true,
   },
@@ -39,45 +11,37 @@ const Submission_Schema = new Schema({
     type: String,
     required: true,
   },
-  Student_Email: {
+  Course_Name: {
     type: String,
-    trim: true,
-    lowercase: true,
-    validate: {
-      validator: function (v: any) {
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
-      },
-      message: 'Please enter a valid email',
-    },
-    required: [true, 'Email required'],
+    required: true,
   },
-  Student_Grade: {
+  Course_Code: {
     type: String,
+    required: true,
   },
-  Evaulators_Data: [
-    {
-      Faculty_Registration_Number_1: {
-        type: String,
-      },
-      Faculty_Email_1: {
-        type: String,
-      },
-      Faculty_Registration_Number_2: {
-        type: String,
-      },
-      Faculty_Email_2: {
-        type: String,
-      },
-    },
-  ],
 
-  Tracker: {
-    type: Number,
-    validate: {
-      validator: Number.isInteger,
-      message: '{VALUE} is not an integer value',
-    },
+  Section: {
+    type: String,
+    required: true,
   },
+  Year: {
+    type: String,
+    required: true,
+  },
+  Department: {
+    type: String,
+    required: true,
+  },
+
+  Uploaded_By: {
+    type: String,
+    required: true,
+  },
+  Type: {
+    type: String,
+    required: true,
+  },
+
   TimeStamp: {
     type: Date,
     default: new Date(),
@@ -89,4 +53,4 @@ const Submission_Schema = new Schema({
   ],
 });
 
-export default mongoose.model('Submission_Schema', Submission_Schema);
+export default mongoose.model('File_Schema', File_Schema);
