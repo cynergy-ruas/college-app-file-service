@@ -1,5 +1,5 @@
 import { Submission } from '../types/interfaces';
-var Faculty_Schema = require('../model /facultyschema');
+import userSchema from '../model /userschema';
 var nodemailer = require('nodemailer');
 
 export async function notifyIC(data: Submission) {
@@ -13,7 +13,7 @@ export async function notifyIC(data: Submission) {
   var IC_Members: String[] = [];
   var Admins: String[] = [];
   try {
-    var Find_Member = await Faculty_Schema.find({
+    var Find_Member = await userSchema.find({
       Role: 'IC Member',
       Department: data.Department,
     });
@@ -26,7 +26,7 @@ export async function notifyIC(data: Submission) {
 
   if (typeof IC_Members !== 'undefined' && IC_Members.length === 0) {
     try {
-      var Find_Member = await Faculty_Schema.find({
+      var Find_Member = await userSchema.find({
         Role: 'Admin',
       });
       for (var i = 0; i < Find_Member.length; i++) {

@@ -1,6 +1,6 @@
 var Submission_Schema = require('../model /submissionschema');
 
-import { notifyFaculty } from '../services/notify_service_faculty';
+import { notifyFaculty } from '../services/notify_service_Faculty';
 import {
   notifyStudent_Stage_2,
   notifyStudent_Stage_3,

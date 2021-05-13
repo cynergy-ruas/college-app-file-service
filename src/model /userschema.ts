@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const Faculty_Schema = new Schema({
+const userSchema = new Schema({
   Name: {
     type: String,
     required: true,
@@ -28,7 +28,7 @@ const Faculty_Schema = new Schema({
     lowercase: true,
     validate: {
       validator: function (v: any) {
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        return /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(v);
       },
       message: 'Please enter a valid email',
     },
@@ -43,4 +43,4 @@ const Faculty_Schema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Faculty_Schema', Faculty_Schema);
+export default mongoose.model('User', userSchema);

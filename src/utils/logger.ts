@@ -9,7 +9,7 @@ const consoleFormat = printf(({ level, message, label, timestamp }) => {
 const options: winston.LoggerOptions = {
   transports: [
     new winston.transports.Console({
-      level: process.env.NODE_ENV === 'production' ? 'error' : 'debug',
+      level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
       format: combine(
         label({ label: 'App' }),
         timestamp({ format: '[on] MM-DD-YYYY [at] HH:mm:ss' }),

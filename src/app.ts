@@ -15,12 +15,14 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true,
   })
-  .then(() => {})
+  .then(() => {
+    logger.info('Connected to Database');
+  })
   .catch((err) => {
     logger.debug(`Mongo connection error: ${err}`);
   });
 
-app.listen(process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3000);
 
 app.use(express.json());
 
