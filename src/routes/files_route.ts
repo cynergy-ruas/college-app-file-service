@@ -16,7 +16,7 @@ import { uploadbuff } from '../utils/multer';
 
 const File_Router = Router();
 
-File_Router.post('CR/submitdoc', uploadbuff, (req, res) => {
+File_Router.post('/cr/submitdoc', uploadbuff, (req, res) => {
   try {
     s3_service_function(req, res);
   } catch (error) {
@@ -24,7 +24,7 @@ File_Router.post('CR/submitdoc', uploadbuff, (req, res) => {
   }
 });
 
-File_Router.put('CR/updatedoc', (req, res) => {
+File_Router.put('/cr/updatedoc', (req, res) => {
   try {
     updatebyName(req, res);
   } catch (error) {
@@ -32,7 +32,7 @@ File_Router.put('CR/updatedoc', (req, res) => {
   }
 });
 
-File_Router.delete('CR/deletedoc', (req, res) => {
+File_Router.delete('/cr/deletedoc', (req, res) => {
   try {
     deletebyName(req, res);
   } catch (error) {
