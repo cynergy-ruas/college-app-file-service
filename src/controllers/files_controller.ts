@@ -13,7 +13,7 @@ export async function getbysection(req: any, res: any) {
   }
 }
 
-// This Request is for all the IC Memebers and Admin if he wants to filter out
+
 export async function getbyyear(req: any, res: any) {
   try {
     await File_Schema.find({
@@ -26,7 +26,7 @@ export async function getbyyear(req: any, res: any) {
   }
 }
 
-// This Request is for all the IC Memebers and Admin if he wants to filter out
+
 
 export async function getbycoursename(req: any, res: any) {
   try {
@@ -39,7 +39,8 @@ export async function getbycoursename(req: any, res: any) {
     res.json({ message: err });
   }
 }
-// This Request is for all the IC Memebers and Admin if he wants to filter out
+
+
 export async function getbycoursecode(req: any, res: any) {
   try {
     await File_Schema.find({
